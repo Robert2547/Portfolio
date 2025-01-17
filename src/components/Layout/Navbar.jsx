@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import DayNightToggle from "../UI/DayNightToggle";
 
-const Navbar = () => {
+const Navbar = ({ isDay, toggleDayNight }) => {
   return (
     <motion.nav
-      className="fixed top-0 w-full z-50 px-4 py-4"
+      className="fixed top-0 w-full z-50 px-4 py-4 bg-white/5 backdrop-blur-md"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -17,7 +18,8 @@ const Navbar = () => {
           >
             Portfolio.Beach
           </motion.div>
-          <div className="flex space-x-8">
+
+          <div className="flex items-center space-x-8">
             {["Home", "Projects", "Contact"].map((item) => (
               <motion.a
                 key={item}
@@ -29,6 +31,7 @@ const Navbar = () => {
                 {item}
               </motion.a>
             ))}
+            <DayNightToggle isDay={isDay} toggleDayNight={toggleDayNight} />
           </div>
         </div>
       </div>

@@ -1,41 +1,70 @@
-// Contact.jsx
 import React from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section className="py-32">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">
+    <section className="py-20 relative z-10" id="contact">
+      <div className="max-w-3xl mx-auto px-4">
+        <motion.h2
+          className="text-4xl font-bold text-white text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           Get in Touch
-        </h2>
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg p-8 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.div
+          className="bg-white/10 backdrop-blur-md rounded-xl p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <form className="space-y-6">
             <div>
-              <label className="block mb-2 text-white">Name</label>
+              <label htmlFor="name" className="block text-white mb-2">
+                Name
+              </label>
               <input
                 type="text"
-                className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none text-white"
+                id="name"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:border-white/30 transition-colors"
+                placeholder="Your name"
               />
             </div>
             <div>
-              <label className="block mb-2 text-white">Email</label>
+              <label htmlFor="email" className="block text-white mb-2">
+                Email
+              </label>
               <input
                 type="email"
-                className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none text-white"
+                id="email"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:border-white/30 transition-colors"
+                placeholder="your@email.com"
               />
             </div>
             <div>
-              <label className="block mb-2 text-white">Message</label>
-              <textarea className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none h-32 text-white" />
+              <label htmlFor="message" className="block text-white mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows={5}
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:border-white/30 transition-colors"
+                placeholder="Your message..."
+              />
             </div>
-            <button
+            <motion.button
               type="submit"
-              className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 py-2 rounded-lg transition-all duration-300 text-white"
+              className="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-3 rounded-lg transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Send Message
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

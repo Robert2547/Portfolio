@@ -17,24 +17,28 @@ const CelestialBody = ({ isDay }) => {
 
     if (raysRef.current) {
       raysRef.current.rotation.z += isDay ? 0.001 : 0.0005;
+      raysRef.current.material.uniforms.uTime.value = time;
     }
   });
 
   return (
     <group position={[5, 5, -10]}>
+      {/* Main celestial body */}
       <mesh ref={bodyRef}>
         <sphereGeometry args={[1, 32, 32]} />
-        <meshPhongMaterial
+        <meshStandardMaterial
           color={isDay ? "#FDB813" : "#FFFFFF"}
           emissive={isDay ? "#FFA500" : "#AAAAAA"}
           emissiveIntensity={isDay ? 1 : 0.5}
         />
       </mesh>
 
-      <mesh ref={raysRef}>
+      {/* Rays/Glow effect */}
+      <mesh ref={raysRef} renderOrder={-1}>
         <planeGeometry args={[10, 10]} />
         <shaderMaterial
-          transparent
+          transparent={true}
+          depthWrite={false}
           uniforms={{
             uTime: { value: 0 },
             uIsDay: { value: isDay ? 1 : 0 },
@@ -47,18 +51,23 @@ const CelestialBody = ({ isDay }) => {
             }
           `}
           fragmentShader={`
+            uniform float uTime;
             uniform float uIsDay;
             varying vec2 vUv;
+            
             void main() {
               vec2 center = vec2(0.5);
               float dist = distance(vUv, center);
               float alpha = smoothstep(0.2, 0.5, dist) * 0.5;
+              
               vec3 dayColor = vec3(1.0, 0.8, 0.3);
               vec3 nightColor = vec3(0.9, 0.9, 1.0);
               vec3 finalColor = mix(nightColor, dayColor, uIsDay);
+              
               gl_FragColor = vec4(finalColor, (1.0 - alpha) * mix(0.3, 0.7, uIsDay));
             }
           `}
+          side={THREE.DoubleSide}
         />
       </mesh>
     </group>
