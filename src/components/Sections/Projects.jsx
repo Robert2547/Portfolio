@@ -1,47 +1,61 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ProjectCard from "../UI/ProjectCard";
-
-const projectsData = [
-  {
-    title: "Wave Visualizer",
-    description: "Interactive 3D visualization of ocean waves using WebGL",
-    tags: ["Three.js", "WebGL", "React"],
-    link: "#",
-  },
-  {
-    title: "Beach Weather",
-    description: "Real-time weather tracking with beautiful animations",
-    tags: ["Next.js", "TailwindCSS", "API"],
-    link: "#",
-  },
-  {
-    title: "Island Explorer",
-    description: "Virtual reality tour of tropical destinations",
-    tags: ["React Three Fiber", "3D", "Animation"],
-    link: "#",
-  },
-];
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "Project One",
+      description: "A brief description of the project and technologies used.",
+      image: "/assets/images/projects/project1.jpg",
+      tech: ["React", "Three.js", "GSAP"],
+      link: "#",
+    },
+    // Add more projects...
+  ];
+
   return (
-    <section className="py-20 relative z-10" id="projects">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.h2
-          className="text-4xl font-bold text-white text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+    <section id="projects" className="py-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-4"
+      >
+        <h2 className="text-4xl font-bold mb-16 text-center">
           Featured Projects
-        </motion.h2>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={index} {...project} index={index} />
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              className="bg-background-light rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-400 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

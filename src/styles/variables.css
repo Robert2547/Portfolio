@@ -1,0 +1,32 @@
+:root {
+    /* Colors */
+    --color-primary: #64ffda;
+    --color-secondary: #6e6aff;
+    --color-background: #0a192f;
+    --color-background-light: #112240;
+    --color-text-primary: #ccd6f6;
+    --color-text-secondary: #8892b0;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    
+    /* Typography */
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-code: 'Fira Code', monospace;
+    
+    /* Transitions */
+    --transition-slow: 0.5s ease;
+    --transition-normal: 0.3s ease;
+    --transition-fast: 0.2s ease;
+    
+    /* Z-indices */
+    --z-backdrop: -1;
+    --z-three-scene: 0;
+    --z-content: 1;
+    --z-navigation: 100;
+  }
+  
