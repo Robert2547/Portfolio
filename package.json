@@ -9,6 +9,7 @@
     "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^5.0.0",
     "react-icons": "^5.4.0",
     "react-scripts": "5.0.1",
     "three": "^0.161.0",
