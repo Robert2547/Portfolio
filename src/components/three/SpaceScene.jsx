@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 import Planet from "./models/Planet";
+import UFO from "./models/UFO";
 import CustomStars from "./models/Stars";
 
 const SpaceScene = () => {
@@ -33,20 +34,17 @@ const SpaceScene = () => {
           minPolarAngle={Math.PI / 2}
         />
 
-        {/* Ambient light for overall scene brightness */}
+        {/* Main lighting */}
         <ambientLight intensity={0.4} />
-
-        {/* Main directional light */}
-        <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
-
-        {/* Accent lights for atmosphere */}
+        <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         <pointLight
           position={[-10, -10, -10]}
           intensity={0.5}
-          color="#4f46e5"
+          color="#64ffda"
         />
-        <pointLight position={[10, 10, 10]} intensity={0.8} color="#64ffda" />
+        <pointLight position={[10, 10, 10]} intensity={0.8} color="#6e6aff" />
 
+        {/* Stars background */}
         <Stars
           radius={100}
           depth={50}
@@ -55,9 +53,13 @@ const SpaceScene = () => {
           saturation={0}
           fade={true}
         />
-
-        <Planet position={[0, 0, 0]} />
         <CustomStars />
+
+        {/* Main content */}
+        <Suspense fallback={null}>
+          <Planet position={[0, 0, 0]} />
+          <UFO />
+        </Suspense>
       </Canvas>
     </div>
   );
