@@ -3,9 +3,54 @@
   "name": "Benno's Portfolio Website",
   "icons": [
     {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
       "src": "textures/death.png",
       "type": "image/png",
       "sizes": "64x64"
+    },
+    {
+      "src": "textures/asteroids/asteroid1.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "textures/asteroids/asteroid3.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "textures/asteroids/asteroid4.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "textures/mars/mars_normal.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    },
+    {
+      "src": "textures/mars/mars_roughness.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    },
+    {
+      "src": "textures/mars/mars_texture.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
