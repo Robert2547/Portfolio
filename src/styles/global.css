@@ -24,3 +24,8 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+@keyframes meteorGlow {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 5px rgba(255,165,0,0.2)); }
+  50% { filter: brightness(1.2) drop-shadow(0 0 10px rgba(255,165,0,0.4)); }
+}
