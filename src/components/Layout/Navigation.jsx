@@ -1,9 +1,12 @@
+// src/components/layout/Navigation.jsx
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiDevpost } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,100 +17,88 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { title: "Home", href: "#home" },
-    { title: "Projects", href: "#projects" },
-    { title: "About", href: "#about" },
-    { title: "Contact", href: "#contact" },
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: <FaGithub size={22} />,
+      url: "https://github.com/Robert2547",
+      color: "hover:text-[#6e5494]",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin size={22} />,
+      url: "https://www.linkedin.com/in/josephbenno/",
+      color: "hover:text-[#0077b5]",
+    },
+    {
+      name: "Devpost",
+      icon: <SiDevpost size={22} />,
+      url: "https://devpost.com/josephbenno2547",
+      color: "hover:text-[#003E54]",
+    },
+    {
+      name: "Email",
+      icon: <MdEmail size={22} />,
+      url: "mailto:josephbenno2547@gmail.com",
+      color: "hover:text-[#EA4335]",
+    },
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+    <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg" : "bg-transparent"
+        isScrolled ? "bg-background/80 backdrop-blur-lg py-4" : "py-6"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
+          {/* Logo/Name */}
           <motion.a
-            href="#"
-            className="text-2xl font-bold text-primary"
+            href="#home"
+            className="text-2xl font-bold text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Portfolio
+            JB
           </motion.a>
 
-          {/* Desktop Navigation */}
+          {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
+            {["Home", "Skills", "Experience", "Projects", "Contact"].map(
+              (item) => (
+                <motion.a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-gray-300 hover:text-primary transition-colors"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  {item}
+                </motion.a>
+              )
+            )}
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center space-x-4">
+            {socialLinks.map((link) => (
               <motion.a
-                key={index}
-                href={item.href}
-                className="text-gray-300 hover:text-primary transition-colors"
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-gray-300 transition-colors ${link.color}`}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                title={link.name}
               >
-                {item.title}
+                {link.icon}
               </motion.a>
             ))}
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-300 hover:text-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
         </div>
-
-        {/* Mobile Menu */}
-        <motion.div
-          className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : -20 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="py-4 space-y-4">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                className="block text-gray-300 hover:text-primary transition-colors"
-                whileHover={{ x: 10 }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.title}
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

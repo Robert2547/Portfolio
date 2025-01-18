@@ -30,17 +30,17 @@ function App() {
             <Hero />
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
           </div>
-          
+
           <div className="relative bg-nebula-1">
             <Skills />
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
           </div>
-          
+
           <div className="relative bg-nebula-2">
             <Experience />
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
           </div>
-          
+
           <div className="relative">
             <Projects />
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
