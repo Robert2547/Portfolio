@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 // Add more varied asteroid shapes
 const asteroidImages = [
-  "/textures/asteroids/asteroid1.png",
-  "/textures/asteroids/asteroid3.png",
-  "/textures/asteroids/asteroid4.png",
+  `${process.env.PUBLIC_URL}/textures/asteroids/asteroid1.png`,
+  `${process.env.PUBLIC_URL}/textures/asteroids/asteroid3.png`,
+  `${process.env.PUBLIC_URL}/textures/asteroids/asteroid4.png`,
 ];
 
 const FloatingAsteroids = () => {
@@ -73,13 +73,13 @@ const FloatingAsteroids = () => {
             },
           }}
         >
-          <div 
+          <div
             className="w-full h-full rounded-[40%_60%_70%_30%_/_30%_30%_70%_70%] overflow-hidden shadow-lg"
             style={{
               background: `url(${asteroid.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "drop-shadow(0 0 10px rgba(0,0,0,0.5))",
             }}
           />
         </motion.div>
@@ -89,4 +89,3 @@ const FloatingAsteroids = () => {
 };
 
 export default FloatingAsteroids;
-

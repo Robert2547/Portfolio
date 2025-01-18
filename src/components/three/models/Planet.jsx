@@ -12,9 +12,9 @@ const Planet = ({ position }) => {
   const [marsTexture, marsNormalMap, marsRoughnessMap] = useLoader(
     TextureLoader,
     [
-      "/textures/mars/mars_texture.jpg",
-      "/textures/mars/mars_normal.jpg",
-      "/textures/mars/mars_roughness.jpg",
+      `${process.env.PUBLIC_URL}/textures/mars/mars_texture.jpg`,
+      `${process.env.PUBLIC_URL}/textures/mars/mars_normal.jpg`,
+      `${process.env.PUBLIC_URL}/textures/mars/mars_roughness.jpg`,
     ]
   );
 
@@ -65,8 +65,6 @@ const Planet = ({ position }) => {
           side={2}
         />
       </mesh>
-
-      
     </group>
   );
 };

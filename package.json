@@ -14,16 +14,15 @@
     "three": "^0.161.0",
     "web-vitals": "^4.2.4"
   },
-  
-    "homepage": "https://Robert2547.github.io/Portfolio",
-    "scripts": {
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
-    },
+  "homepage": "https://github.com/Robert2547/Portfolio",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -42,5 +41,4 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
-  
 }

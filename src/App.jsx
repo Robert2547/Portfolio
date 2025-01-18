@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navigation from "./components/layout/Navigation";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
@@ -14,7 +14,6 @@ import "./styles/animations.css";
 
 function App() {
   return (
-    <Router>
       <div className="relative">
         {/* Background Effects */}
         <div className="fixed inset-0">
@@ -55,7 +54,6 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
   );
 }
 
