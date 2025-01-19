@@ -95,10 +95,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom text */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Joseph Benno. All rights reserved.</p>
-        </div>
+        
       </div>
     </footer>
   );

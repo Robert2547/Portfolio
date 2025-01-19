@@ -12,10 +12,11 @@
     "react-error-boundary": "^5.0.0",
     "react-icons": "^5.4.0",
     "react-scripts": "5.0.1",
+    "recharts": "^2.15.0",
     "three": "^0.161.0",
     "web-vitals": "^4.2.4"
   },
-  "homepage": "https://github.com/Robert2547/Portfolio",
+  "homepage": "https://robert2547.github.io/Portfolio",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

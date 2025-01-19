@@ -1,10 +1,12 @@
-import React, { Suspense, lazy } from "react";
-import { ErrorBoundary } from 'react-error-boundary';
+import React, { Suspense, lazy, useEffect } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import Navigation from "./components/layout/Navigation";
 import Hero from "./components/sections/Hero";
 import Footer from "./components/layout/Footer";
 import "./styles/global.css";
 import "./styles/animations.css";
+import { initAnalytics } from "./utils/analytics";
+import { useState } from "react";
 
 // Lazy load heavier components
 const Skills = lazy(() => import("./components/sections/Skills"));
@@ -12,7 +14,12 @@ const Experience = lazy(() => import("./components/sections/Experience"));
 const Projects = lazy(() => import("./components/sections/Projects"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 const SpaceScene = lazy(() => import("./components/three/SpaceScene"));
-const FloatingAsteroids = lazy(() => import("./components/background/FloatingAsteroids"));
+const FloatingAsteroids = lazy(() =>
+  import("./components/background/FloatingAsteroids")
+);
+const AnalyticsDashboard = lazy(() =>
+  import("./components/analytics/AnalyticsDashboard")
+);
 
 // Error Fallback Component
 const ErrorFallback = ({ error, resetErrorBoundary }) => (
@@ -36,10 +43,15 @@ const LoadingSpinner = () => (
   </div>
 );
 
-function App() {
+// Main content component
+const MainContent = () => {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
-    <div className="relative">
-      {/* Background Effects */}
+    <>
+      {/* Your existing MainContent JSX */}
       <div className="fixed inset-0">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Suspense fallback={<LoadingSpinner />}>
@@ -50,7 +62,6 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10">
         <Navigation />
         <main className="space-y-0">
@@ -85,6 +96,35 @@ function App() {
         </main>
         <Footer />
       </div>
+    </>
+  );
+};
+
+function App() {
+  const [showAnalytics, setShowAnalytics] = useState(false);
+
+  useEffect(() => {
+    // Add keyboard shortcut (Ctrl + Shift + A)
+    const handleKeyPress = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+        e.preventDefault(); // Prevent default browser behavior
+        setShowAnalytics((prev) => !prev);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, []);
+
+  return (
+    <div className="relative">
+      {showAnalytics ? (
+        <Suspense fallback={<LoadingSpinner />}>
+          <AnalyticsDashboard onClose={() => setShowAnalytics(false)} />
+        </Suspense>
+      ) : (
+        <MainContent />
+      )}
     </div>
   );
 }
