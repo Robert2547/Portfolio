@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.4fe9fe27.css",
-    "main.js": "/Portfolio/static/js/main.8d284714.js",
+    "main.js": "/Portfolio/static/js/main.03a1b1f9.js",
     "static/js/110.fdd77e13.chunk.js": "/Portfolio/static/js/110.fdd77e13.chunk.js",
-    "static/js/944.fdff53e4.chunk.js": "/Portfolio/static/js/944.fdff53e4.chunk.js",
-    "static/js/198.1b5f8229.chunk.js": "/Portfolio/static/js/198.1b5f8229.chunk.js",
+    "static/js/944.44a33142.chunk.js": "/Portfolio/static/js/944.44a33142.chunk.js",
+    "static/js/198.701de9e7.chunk.js": "/Portfolio/static/js/198.701de9e7.chunk.js",
     "static/js/58.d0c8d3b7.chunk.js": "/Portfolio/static/js/58.d0c8d3b7.chunk.js",
     "static/js/587.51077bab.chunk.js": "/Portfolio/static/js/587.51077bab.chunk.js",
     "static/js/266.c1e06bda.chunk.js": "/Portfolio/static/js/266.c1e06bda.chunk.js",
@@ -14,10 +14,10 @@
     "static/js/693.4a4a84a3.chunk.js": "/Portfolio/static/js/693.4a4a84a3.chunk.js",
     "index.html": "/Portfolio/index.html",
     "main.4fe9fe27.css.map": "/Portfolio/static/css/main.4fe9fe27.css.map",
-    "main.8d284714.js.map": "/Portfolio/static/js/main.8d284714.js.map",
+    "main.03a1b1f9.js.map": "/Portfolio/static/js/main.03a1b1f9.js.map",
     "110.fdd77e13.chunk.js.map": "/Portfolio/static/js/110.fdd77e13.chunk.js.map",
-    "944.fdff53e4.chunk.js.map": "/Portfolio/static/js/944.fdff53e4.chunk.js.map",
-    "198.1b5f8229.chunk.js.map": "/Portfolio/static/js/198.1b5f8229.chunk.js.map",
+    "944.44a33142.chunk.js.map": "/Portfolio/static/js/944.44a33142.chunk.js.map",
+    "198.701de9e7.chunk.js.map": "/Portfolio/static/js/198.701de9e7.chunk.js.map",
     "58.d0c8d3b7.chunk.js.map": "/Portfolio/static/js/58.d0c8d3b7.chunk.js.map",
     "587.51077bab.chunk.js.map": "/Portfolio/static/js/587.51077bab.chunk.js.map",
     "266.c1e06bda.chunk.js.map": "/Portfolio/static/js/266.c1e06bda.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.4fe9fe27.css",
-    "static/js/main.8d284714.js"
+    "static/js/main.03a1b1f9.js"
   ]
 }
