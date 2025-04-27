@@ -1,4 +1,3 @@
-// src/components/sections/Experience.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -9,9 +8,9 @@ const Experience = () => {
       company: "Leidos",
       period: "September 2024 - Present",
       achievements: [
-        "Accelerated deployment efficiency by 20% through automation using Skaffold and Helm",
-        "Configured local development infrastructure using bridge networking between Linux and Windows VMs",
-        "Enhanced secure deployment workflows using Zarf for isolated environments",
+        "Leveraged Gemma3 VLM and prompt engineering to extract electrical diagrams and build a structured knowledge graph, \nboosting Agentic AI systems by 60% .",
+        "Developed RAG and Graph Query tools by integrating vector databases and knowledge graphs, enhancing \nretrieval of electrical knowledge to strengthen Agentic AI decision-making.",
+        "Automated containerized deployment of backend services using Skaffold and Helm , reducing deployment time by\n 20% and streamlining release workflows.",
       ],
     },
     {
@@ -19,9 +18,9 @@ const Experience = () => {
       company: "Zea Consulting",
       period: "January 2024 - May 2024",
       achievements: [
-        "Implemented Firebase Authentication for secure user management",
-        "Architected RESTful API endpoints with Node.js/Express",
-        "Developed hybrid message generation system combining OpenAI API with static database",
+        "Designed and implemented a secure authentication system using Firebase , protecting protected routes and enabling\n robust session management for production environments.",
+        "Developed a modular RESTful API architecture with Node.js and Express , incorporating middleware validation and\n standardized error handling to improve backend reliability.",
+        "Architected a cost-efficient message generation system that balanced OpenAI API calls with static database retrievals,\n optimizing personalization while reducing operational costs by 25%.",
       ],
     },
     {
@@ -29,9 +28,9 @@ const Experience = () => {
       company: "UCF",
       period: "August 2023 - January 2024",
       achievements: [
-        "Testing LLaVA performance at disaster management",
-        "Conducted experiments on disaster image understanding using Joint Damage Scale",
-        "Tested and provided insights to improve model accuracy",
+        "Evaluated LLaV A's performance in disaster damage assessment against the Joint Damage Scale (JDS) , providing\n actionable metrics to guide model improvements.",
+        "Designed 50+ disaster simulation scenarios using advanced image modification techniques , uncovering critical\n model weaknesses under real-world conditions.",
+        "Documented comparative analyses between AI and human disaster assessments, generating insights that informed AI\n model retraining for enhanced disaster response accuracy.",
       ],
     },
   ];

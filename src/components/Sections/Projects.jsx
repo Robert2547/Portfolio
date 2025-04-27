@@ -6,12 +6,11 @@ const Projects = () => {
     {
       title: "Summarizer Chrome Extension",
       description:
-        "A Chrome extension using Natural Language Processing to summarize web content, winner of UCF Hackathon Microsoft & RBC challenge.",
+        "Built a Chrome extension leveraging Natural Language Pr ocessing (NLP) to summarize web articles and text, enhancing\n reading efficiency across platforms.",
       achievements: [
-        "Led team of 3 developers among 800+ participants",
-        "Reduced response times from 5s to 300ms with Redis caching",
-        "Maintained 85% test coverage with CI/CD pipeline",
-        "60% faster summarization with optimized data streaming",
+        "Led a team of 3 developers to win the Microsoft & RBC Challenge among 800+ participants at UCF's hackathon.",
+        "Designed and maintained a CI/CD pipeline with GitHub Actions , achieving 85% automated test coverage for\n backend services.",
+        "Architected a parallel streaming summarization system , reducing content processing latency by 60% compared to\n synchronous models.Maintained 85% test coverage with CI/CD pipeline"
       ],
       tech: ["React", "TypeScript", "Python", "FastAPI", "Redis", "Jest"],
       link: "#",
@@ -19,12 +18,11 @@ const Projects = () => {
     {
       title: "Handy Dollar",
       description:
-        "Full-stack financial management platform with AI-powered automation, winner of Google's Challenge at FIU ShellHacks.",
+        "Developed a full-stack financial management platform that streamlined expense tracking and receipt parsing through AI-powered automation.",
       achievements: [
-        "Led team of 4 among 1,200+ participants",
-        "40% reduction in processing delays using Kafka",
-        "Integrated data from 10+ banks via Plaid API",
-        "95% accuracy in receipt data extraction",
+        "Collaborated with a team of 3 engineers to win Google's Challenge at FIU ShellHacks among 1,200+ participants.",
+        "Integrated the Plaid API to securely aggregate real-time financial data from 10+ banks, \nensuring unified and privacy-compliant expense tracking.",
+        "Built a computer vision pipeline using Azure AI and OpenAI,\n achieving 95% receipt parsing accuracy for automated data extraction."
       ],
       tech: ["TypeScript", "NextJS", "NodeJS", "Kafka", "Azure AI", "OpenAI"],
       link: "#",
